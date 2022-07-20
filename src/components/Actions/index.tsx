@@ -1,13 +1,19 @@
 import * as s from "./style"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { render } from "react-dom";
 
 
 export const Actions = () => {
-    
+    const [time, setTime] = useState(0)
+
+    useEffect(() => {
+        
+    }, [time])
+
     const StartTime = () => {
-        setTimeout(() => {
-            
-        }, 1000);
+        setInterval(()=> {
+            setTime(time + 1)
+        }, 1000)
     }
 
     return (
@@ -15,7 +21,7 @@ export const Actions = () => {
             <div id="MenuDiv">
                 <div id="Time">
                     <h1>Time</h1>
-                    <p>00:00</p>
+                    <p id="TimesShow">{time}</p>
                 </div>
                 <div id="Movements">
                     <h1>Movements</h1>
