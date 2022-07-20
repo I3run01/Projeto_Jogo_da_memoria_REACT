@@ -7,7 +7,7 @@ export const Actions = () => {
     
     let interval  = () => {
         if (time.getRestart() == true) {
-            time.setTime(Number(0))
+            time.setTime(Number(-1))
             time.setRestart(false)
         }
         time.setTime(time.getTime()+1)
