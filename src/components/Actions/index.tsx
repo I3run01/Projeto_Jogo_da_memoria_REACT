@@ -17,7 +17,11 @@ export const Actions = () => {
 
     const StartTime = () => {
         time.setRestart(true)
-        setInterval(interval, 1000)
+        if (time.getFirstTime()) {
+            setInterval(interval, 1000)
+            time.setFirstTime(false)
+        }
+        
 
     }
 
