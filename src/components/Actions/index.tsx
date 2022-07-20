@@ -1,6 +1,5 @@
 import * as s from "./style"
 import { Timer } from "./ClassTimer"
-import { useState } from "react"
 
 export const Actions = () => {
     let time = new Timer()
@@ -39,7 +38,9 @@ export const Actions = () => {
             </div>
             <div id="ButtonDiv" onClick={StartTime}>
                 <div id="BTN">
-                    <div id="BtnSymbol"></div>
+                    <div id="BtnSymbol">
+                        <img src="images/svgs/restart.svg" alt="" />
+                    </div>
                     <div id="BtnRestart">Restart</div>
                 </div>
             </div>

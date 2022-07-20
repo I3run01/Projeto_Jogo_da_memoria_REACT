@@ -46,13 +46,15 @@ export const ActionsDiv = styled.div`
 
         #BtnSymbol {
             min-width: 20px;
-            border-radius: 20px 0 0 20px;;
+            border-radius: 20px 0 0 20px;
+            padding-left: 10px;
         }
 
         #BtnRestart {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             min-width: 120px;
             border-radius: 0 20px 20px 0;
         }
