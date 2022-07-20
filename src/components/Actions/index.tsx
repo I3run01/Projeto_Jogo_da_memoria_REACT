@@ -6,13 +6,12 @@ import { render } from "react-dom";
 export const Actions = () => {
     const [time, setTime] = useState(0)
 
-    useEffect(() => {
-        
-    }, [time])
-
     const StartTime = () => {
+       
         setInterval(()=> {
             setTime(time + 1)
+            const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
+            paragraph.innerHTML = String(time)
         }, 1000)
     }
 
@@ -21,7 +20,7 @@ export const Actions = () => {
             <div id="MenuDiv">
                 <div id="Time">
                     <h1>Time</h1>
-                    <p id="TimesShow">{time}</p>
+                    <p id="TimesShow">00:00</p>
                 </div>
                 <div id="Movements">
                     <h1>Movements</h1>
