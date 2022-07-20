@@ -1,18 +1,33 @@
 import * as s from "./style"
-import { useState, useEffect } from "react";
-import { render } from "react-dom";
-
+import { Timer } from "./ClassTimer"
+import { useState } from "react"
 
 export const Actions = () => {
-    const [time, setTime] = useState(0)
+    const [clearIntervalParameter, setClearIntervalParameter] = useState(false)
 
-    const StartTime = () => {
-       
-        setInterval(()=> {
-            setTime(time + 1)
-            const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
-            paragraph.innerHTML = String(time)
-        }, 1000)
+    let time = new Timer()
+    let interval  = () => {
+        time.MoreTime()
+        const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
+        paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
+    }
+
+    const StartTime = () => {     
+        if (clearIntervalParameter == false ) setInterval(interval, 1000)
+
+        else   clearInterval(interval)
+           
+            setClearIntervalParameter(false)
+        }
+
+        }
+
+        else {
+            setClearIntervalParameter(true)
+            time.setTime(0)
+            StartTime()
+        }
+    
     }
 
     return (
