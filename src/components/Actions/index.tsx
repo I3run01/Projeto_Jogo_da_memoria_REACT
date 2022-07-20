@@ -3,7 +3,7 @@ import { Timer } from "./ClassTimer"
 import { useState } from "react"
 
 export const Actions = () => {
-    const [clearIntervalParameter, setClearIntervalParameter] = useState(false)
+    const [firstTimeAction, setfirstTimeAction] = useState(true)
 
     let time = new Timer()
     
@@ -13,10 +13,10 @@ export const Actions = () => {
         paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
     }
 
-    const StartTime = () => {     
-        if (clearIntervalParameter == false ) setInterval(interval, 1000)
+    const StartTime = () => {
+        setTimeout(interval, 1000)
+        StartTime()
 
-    
     }
 
     return (
