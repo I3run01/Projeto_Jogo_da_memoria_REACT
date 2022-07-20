@@ -3,19 +3,21 @@ import { Timer } from "./ClassTimer"
 import { useState } from "react"
 
 export const Actions = () => {
-    const [firstTimeAction, setfirstTimeAction] = useState(true)
-
     let time = new Timer()
     
     let interval  = () => {
-        time.MoreTime()
+        if (time.getRestart() == true) {
+            time.setTime(Number(0))
+            time.setRestart(false)
+        }
+        time.setTime(time.getTime()+1)
         const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
         paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
     }
 
     const StartTime = () => {
-        setTimeout(interval, 1000)
-        StartTime()
+        time.setRestart(true)
+        setInterval(interval, 1000)
 
     }
 
