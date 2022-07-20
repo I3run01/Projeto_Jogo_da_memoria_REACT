@@ -6,6 +6,7 @@ export const Actions = () => {
     const [clearIntervalParameter, setClearIntervalParameter] = useState(false)
 
     let time = new Timer()
+    
     let interval  = () => {
         time.MoreTime()
         const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
@@ -15,18 +16,6 @@ export const Actions = () => {
     const StartTime = () => {     
         if (clearIntervalParameter == false ) setInterval(interval, 1000)
 
-        else   clearInterval(interval)
-           
-            setClearIntervalParameter(false)
-        }
-
-        }
-
-        else {
-            setClearIntervalParameter(true)
-            time.setTime(0)
-            StartTime()
-        }
     
     }
 
