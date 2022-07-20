@@ -2,20 +2,6 @@ import { GameDivStyle } from "./styled"
 import { Imgs } from "./ClassImgs"
 
 export const GameDiv = () => {
-
-    type Props = {
-        num: number,
-        img: string,
-        id:number
-    }
-    
-    const showCard = (obj: object, id: number) => {
-        let ImgGameDiv = document.querySelector(`#IMG${id}`) as HTMLImageElement
-        console.log(obj)
-        ImgGameDiv.src = 'images/svgs/android.svg'
-
-    }
-
     let images = [
         new Imgs('images/svgs/android.svg', 0),
         new Imgs('images/svgs/disney.svg', 1),
@@ -31,11 +17,29 @@ export const GameDiv = () => {
         new Imgs('images/svgs/moto.svg', 11),
     ]
 
+    type Props = {
+        Img: string,
+        Id: Number
+    }
+    
+    const showCard = ({Img, Id}: Props) => {
+        let ImgGameDiv = document.querySelector(`#IMG${Id}`) as HTMLImageElement
+        let Gamediv = document.querySelector(`#GameDiv${Id}`) as HTMLDivElement
+
+        ImgGameDiv.src = `${Img}`
+        ImgGameDiv.style.opacity = '100%'
+        Gamediv.style.backgroundColor = 'blue'
+
+
+    }
+
+    
+
     return (
         <GameDivStyle>
-            {images.map((item) => (
-                <div className="GameDiv" onClick={() => {showCard(item, item.getId())}} >
-                    <img src='images/svgs/b7.svg' alt="" id={'IMG'+item.getId()}/>
+            {images.map((item, index) => (
+                <div className="GameDiv" onClick={() => {showCard(item)}} id={`GameDiv${item.Id}`}>
+                    <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+item.Id}/>
                 </div>
             ))}
         </GameDivStyle>

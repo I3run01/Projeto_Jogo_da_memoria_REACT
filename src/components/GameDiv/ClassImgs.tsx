@@ -9,27 +9,27 @@ export class Imgs {
         this.id = id
     }
 
-    getImg = () => {
+    get Img() {
         return this.img
     }
 
-    setImg =(value: string) => {
+    set Img (value: string) {
         this.img = value
     }
 
-    getNum = () => {
+    get Num () {
         return this.num
     }
 
-    setNum = (value: number) => {
+    set Num (value: number) {
         this.num = value
     }
 
-    getId = () => {
+    get Id () {
         return this.id
     }
 
-    setId = (value: number) => {
+    set Id (value: number) {
         this.id = value
     }
 }
