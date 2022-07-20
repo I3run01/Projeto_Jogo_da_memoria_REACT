@@ -7,7 +7,7 @@ export const GameDivStyle = styled.div`
     grid-gap: 2vw;
 
     .GameDiv {
-        background-color: gray;
+        background-color: #a2acad;
         padding: 2vw;
         height: 15vw;
         display: flex;
@@ -18,12 +18,9 @@ export const GameDivStyle = styled.div`
             cursor: pointer;
         }
 
-        :active {
-            background-color: blue;
-        }
-
         img {
             width: 80%;
+            opacity: 20%;
         }
     }
 
