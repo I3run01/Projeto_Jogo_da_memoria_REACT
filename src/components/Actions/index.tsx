@@ -42,7 +42,6 @@ export const Actions = () => {
                     <div id="BtnSymbol"></div>
                     <div id="BtnRestart">Restart</div>
                 </div>
-                
             </div>
         </s.ActionsDiv>
     )

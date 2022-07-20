@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
+    height: 80px;
+    display: flex;
+    align-items: center;
+    
     img {
-        transform: scale(0.4);
-        grid-area: 'Nav';
+        width: 200px;
+        margin: auto;
     }
 `
