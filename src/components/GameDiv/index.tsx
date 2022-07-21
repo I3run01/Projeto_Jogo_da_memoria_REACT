@@ -27,21 +27,24 @@ export const GameDiv = () => {
     }
 
     const AlreadyAOpenCard = () => {
-        let openCard = ''
+        let openCard = null
         images.map((item) => {
-            if ( item.OpenCard )return item.Img
+            if ( item.getOpenCard ) openCard = item.Img
         }) 
+        return openCard
     }
 
     type Props = {
         Img: string,
         Id: number,
-
+        setOpenCard: (value: boolean) => {}
+        
     }
     
     const Game = (item: Props) => {
         AlreadyAOpenCard()
         showCard(item.Img, item.Id)
+        
     }
 
     

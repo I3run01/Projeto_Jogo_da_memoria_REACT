@@ -35,11 +35,11 @@ export class Imgs {
         this.id = value
     }
 
-    get OpenCard () {
+    get getOpenCard () {
         return this.openCard
     }
 
-    set OpenCard(value: boolean) {
+    set setOpenCard(value: boolean) {
         this.openCard = value
     }
 }
