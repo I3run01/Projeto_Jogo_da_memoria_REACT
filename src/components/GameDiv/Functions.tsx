@@ -20,8 +20,6 @@ export const hideCard = (id: number) => {
     let index = images.findIndex(Obj => Obj.Id === id)
     images[index].OpenCard = false
 
-    return 'hide'
-
 }
 
 export const AlreadyAOpenCard = () => {

@@ -18,8 +18,8 @@ export const GameDiv = () => {
         if (FirstCard.Img != 'null'){
 
             if(item.Img != FirstCard.Img) {
-                setTimeout(F.hideCard(FirstCard.Id), 3000);
-                setTimeout(F.hideCard(item.Id), 3000);
+                setTimeout(() => {F.hideCard(FirstCard.Id)}, 500);
+                setTimeout(() => {F.hideCard(item.Id)}, 500);
                 
             }
             else {
