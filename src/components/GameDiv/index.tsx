@@ -24,27 +24,49 @@ export const GameDiv = () => {
         
         ImgGameDiv.style.opacity = '100%'
         Gamediv.style.backgroundColor = 'blue'
+
+        let index = images.findIndex(Obj => Obj.Id === id)
+
+    }
+
+    const hideCard = (id: number) => {
+        let ImgGameDiv = document.querySelector(`#IMG${id}`) as HTMLImageElement
+        let Gamediv = document.querySelector(`#GameDiv${id}`) as HTMLDivElement
+        ImgGameDiv.src = 'images/svgs/b7.svg'
+        ImgGameDiv.style.opacity = '20%'
+        Gamediv.style.backgroundColor = '#a2acad'
+
+        let index = images.findIndex(Obj => Obj.Id === id)
+        images[index].setOpenCard = false
+
     }
 
     const AlreadyAOpenCard = () => {
-        let openCard = null
+        let openCard = {Img: 'null', Id: -1,}
         images.map((item) => {
-            if ( item.getOpenCard ) openCard = item.Img
+            if ( item.getOpenCard ) openCard = {Img: item.Img, Id: item.Id}
         }) 
         return openCard
     }
 
-    type Props = {
+    type GameProps = {
         Img: string,
         Id: number,
-        setOpenCard: (value: boolean) => {}
-        
+        setOpenCard: boolean
     }
     
-    const Game = (item: Props) => {
-        AlreadyAOpenCard()
+    const Game = (item: GameProps) => {
+        let FirstCard = AlreadyAOpenCard()
         showCard(item.Img, item.Id)
-        
+        item.setOpenCard = true
+        if (FirstCard.Img != 'null'){
+
+            if(item.Img != FirstCard.Img) {
+                hideCard(FirstCard.Id)
+                hideCard(item.Id)
+            }
+        }
+
     }
 
     
