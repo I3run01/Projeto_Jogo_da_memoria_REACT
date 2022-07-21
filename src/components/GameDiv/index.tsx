@@ -17,20 +17,31 @@ export const GameDiv = () => {
         new Imgs('images/svgs/moto.svg', 11),
     ]
 
-    type Props = {
-        Img: string,
-        Id: Number
-    }
-    
-    const showCard = ({Img, Id}: Props) => {
-        let ImgGameDiv = document.querySelector(`#IMG${Id}`) as HTMLImageElement
-        let Gamediv = document.querySelector(`#GameDiv${Id}`) as HTMLDivElement
-
-        ImgGameDiv.src = `${Img}`
+    const showCard = (img: string, id: number) => {
+        let ImgGameDiv = document.querySelector(`#IMG${id}`) as HTMLImageElement
+        let Gamediv = document.querySelector(`#GameDiv${id}`) as HTMLDivElement
+        ImgGameDiv.src = `${img}`
+        
         ImgGameDiv.style.opacity = '100%'
         Gamediv.style.backgroundColor = 'blue'
+    }
 
+    const AlreadyAOpenCard = () => {
+        let openCard = ''
+        images.map((item) => {
+            if ( item.OpenCard )return item.Img
+        }) 
+    }
 
+    type Props = {
+        Img: string,
+        Id: number,
+
+    }
+    
+    const Game = (item: Props) => {
+        AlreadyAOpenCard()
+        showCard(item.Img, item.Id)
     }
 
     
@@ -38,7 +49,7 @@ export const GameDiv = () => {
     return (
         <GameDivStyle>
             {images.map((item, index) => (
-                <div className="GameDiv" onClick={() => {showCard(item)}} id={`GameDiv${item.Id}`}>
+                <div className="GameDiv" onClick={() => {Game(item)}} id={`GameDiv${item.Id}`}>
                     <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+item.Id}/>
                 </div>
             ))}

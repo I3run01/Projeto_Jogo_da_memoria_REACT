@@ -2,11 +2,13 @@ export class Imgs {
     private num: number
     private img: string
     private id: number
+    private openCard: boolean
 
     constructor(img: string, id: number) {
         this.img = img
         this.num =  0
         this.id = id
+        this.openCard = false
     }
 
     get Img() {
@@ -31,5 +33,13 @@ export class Imgs {
 
     set Id (value: number) {
         this.id = value
+    }
+
+    get OpenCard () {
+        return this.openCard
+    }
+
+    set OpenCard(value: boolean) {
+        this.openCard = value
     }
 }
