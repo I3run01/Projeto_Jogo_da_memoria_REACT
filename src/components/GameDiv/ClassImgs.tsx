@@ -3,12 +3,15 @@ export class Imgs {
     private img: string
     private id: number
     private openCard: boolean
+    private cardInTheGame: boolean
 
     constructor(img: string, id: number) {
         this.img = img
         this.num =  0
         this.id = id
         this.openCard = false
+        this.cardInTheGame = true
+
     }
 
     get Img() {
@@ -35,11 +38,19 @@ export class Imgs {
         this.id = value
     }
 
-    get getOpenCard () {
+    get OpenCard () {
         return this.openCard
     }
 
-    set setOpenCard(value: boolean) {
+    set OpenCard(value: boolean) {
         this.openCard = value
+    }
+
+    get CardInTheGame () {
+        return this.cardInTheGame
+    }
+
+    set CardInTheGame (value: boolean) {
+        this.cardInTheGame = value
     }
 }
