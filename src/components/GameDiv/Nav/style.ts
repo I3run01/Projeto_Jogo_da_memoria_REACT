@@ -9,4 +9,12 @@ export const Nav = styled.nav`
         width: 200px;
         margin: auto;
     }
+
+    @media(min-width: 800px) {
+
+        img {
+            margin: 0;
+        }
+
+    }
 `

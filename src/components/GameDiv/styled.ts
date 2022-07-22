@@ -26,8 +26,42 @@ export const GameDivStyle = styled.div`
                 opacity: 20%;
             }
         }
-
     }
     
+    @media(min-width: 800px) {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+
+
+        grid-template-areas:
+        "AsideCamp GameLayout"
+        "AsideCamp GameLayout"
+        ;
+        #AsideCamp {
+            grid-area: AsideCamp;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        #GameLayout {
+            grid-area: GameLayout;
+            max-height: 40vh;
+            grid-gap: 20px;
+
+            .GameDiv {
+                max-height: 30px;
+            }
+        }
+
+        #Nav {
+            grid-area: Nav;
+        }
+
+        #ActionDiv {
+            grid-area: AcionDiv;
+        }
+    }
 
 `

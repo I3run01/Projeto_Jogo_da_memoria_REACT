@@ -36,7 +36,7 @@ export const Actions = ({Reset}: Props) => {
     }
 
     return (
-        <s.ActionsDiv>
+        <s.ActionsDiv id="ActionDiv">
             <div id="MenuDiv">
                 <div id="Time">
                     <h1>Time</h1>

@@ -3,6 +3,7 @@ import { images } from "./Cards"
 import { Actions } from "./Actions"
 import { time } from "./Actions/ActionsOBJ"
 import { moviment } from "./Actions/ActionsOBJ"
+import { Nav } from "./Nav"
 import * as F from "./Functions"
 
 export const GameDiv = () => {
@@ -42,8 +43,12 @@ export const GameDiv = () => {
     return (
         
         <GameDivStyle>
-            <Actions
-                Reset={F.Reset}/>
+            <div id="AsideCamp">
+                <Nav/>
+                <Actions
+                    Reset={F.Reset}/>
+            </div>
+            
             <div id="GameLayout">
                 {images.map((item, index) => (
                     <div className="GameDiv" 

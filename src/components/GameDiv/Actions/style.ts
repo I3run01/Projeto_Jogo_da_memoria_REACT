@@ -66,4 +66,18 @@ export const ActionsDiv = styled.div`
         }
     }
 
+    @media(min-width: 800px) {
+        #MenuDiv {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+    }
+
+    @media(min-width: 800px) {
+        #ButtonDiv {
+            justify-content: flex-start;
+        }
+    }
+
 `
