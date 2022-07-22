@@ -6,8 +6,8 @@ import { moviment } from "./Actions/ActionsOBJ"
 import { Nav } from "./Nav"
 import * as F from "./Functions"
 
-export const GameDiv = () => {   
-
+export const GameDiv = () => {
+    
     type GameProps = {
         Img: string,
         Id: number,
@@ -41,8 +41,7 @@ export const GameDiv = () => {
         
     }
 
-    return (
-        
+    return ( 
         <GameDivStyle>
             <div id="AsideCamp">
                 <Nav/>
