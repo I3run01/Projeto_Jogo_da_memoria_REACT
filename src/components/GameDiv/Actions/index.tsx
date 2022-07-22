@@ -1,7 +1,7 @@
 import * as s from "./style"
 import { time } from "./ActionsOBJ"
 import { moviment } from './ActionsOBJ'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 type Props = {
@@ -9,6 +9,14 @@ type Props = {
 }
 export const Actions = ({Reset}: Props) => {
     const [start, setStart] = useState('start')
+    const [movementHook, setmovementHook] = useState(0)
+    const [timeHookSeconds, setTimeHookSeconds] = useState(0)
+    const [timeHookMinutes, setTimeHookMinutes] = useState(0)
+    
+    useEffect(() => {
+        setmovementHook(moviment.numMoviments)
+
+    })
     
     let interval  = () => {
         if (time.getRestart() == true) {
@@ -16,11 +24,8 @@ export const Actions = ({Reset}: Props) => {
             time.setRestart(false)
         }
         time.setTime(time.getTime()+1)
-        const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
-        const MovementsNum = document.querySelector('#Moveh1') as HTMLElement
-
-        paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
-        MovementsNum.innerHTML = String(`${moviment.numMoviments}`)
+        setTimeHookSeconds(time.GetSeconds())
+        setTimeHookMinutes(time.GetMinutes())
     }
 
     const StartTime = () => {
@@ -32,7 +37,6 @@ export const Actions = ({Reset}: Props) => {
             setInterval(interval, 1000)
             time.setFirstTime(false)
         }
-
     }
 
     return (
@@ -40,11 +44,11 @@ export const Actions = ({Reset}: Props) => {
             <div id="MenuDiv">
                 <div id="Time">
                     <h1>Time</h1>
-                    <p id="TimesShow">00:00</p>
+                    <p id="TimesShow">{timeHookMinutes}:{timeHookSeconds}</p>
                 </div>
                 <div id="Movements">
                     <h1>Movements</h1>
-                    <p id="Moveh1">{moviment.numMoviments}</p>
+                    <p id="Moveh1">{movementHook}</p>
                 </div>
             </div>
             <div id="ButtonDiv" >
