@@ -36,7 +36,11 @@ export const ActionsDiv = styled.div`
             color: white;
             font-size: 1.4em;
             cursor: pointer;
-            border-radius: 20px 0 0 20px;
+            border-radius: 20px 20px 20px 20px;
+
+            :hover {
+                box-shadow: 2px 2px 10px black;
+            }
 
         }
 
@@ -49,6 +53,7 @@ export const ActionsDiv = styled.div`
             min-width: 20px;
             border-radius: 20px 0 0 20px;
             padding-left: 10px;
+
         }
 
         #BtnRestart {

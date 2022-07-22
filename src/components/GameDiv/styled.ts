@@ -18,7 +18,7 @@ export const GameDivStyle = styled.div`
 
             :hover {
                 cursor: pointer;
-                transform: scale(0.9);
+                box-shadow: 1px 1px 5px black
             }
 
             img {

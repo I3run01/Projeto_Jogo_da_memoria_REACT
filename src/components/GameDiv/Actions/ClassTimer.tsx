@@ -4,7 +4,7 @@ export class Timer {
     private firsttime: boolean
     
     public constructor() {
-        this.time = 0
+        this.time = -1
         this.restart = true
         this.firsttime = true
     }

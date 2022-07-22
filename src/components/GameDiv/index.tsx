@@ -15,7 +15,7 @@ export const GameDiv = () => {
     }
     
     const Game = (item: GameProps) => {
-        if (time.getTime() > 0) {
+        if (time.getTime() > -1) {
             moviment.MoreOne()
             let FirstCard = F.AlreadyAOpenCard()
             F.showCard(item.Img, item.Id)
@@ -23,8 +23,8 @@ export const GameDiv = () => {
             if (FirstCard.Img != 'null'){
 
                 if(item.Img != FirstCard.Img) {
-                    setTimeout(() => {F.hideCard(FirstCard.Id)}, 500);
-                    setTimeout(() => {F.hideCard(item.Id)}, 500);
+                    setTimeout(() => {F.hideCard(FirstCard.Id)}, 200);
+                    setTimeout(() => {F.hideCard(item.Id)}, 200);
                     
                 }
                 else {

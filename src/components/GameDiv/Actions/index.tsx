@@ -1,12 +1,14 @@
 import * as s from "./style"
 import { time } from "./ActionsOBJ"
 import { moviment } from './ActionsOBJ'
+import { useState } from 'react'
 
 
 type Props = {
     Reset: () => void
 }
 export const Actions = ({Reset}: Props) => {
+    const [start, setStart] = useState('start')
     
     let interval  = () => {
         if (time.getRestart() == true) {
@@ -25,6 +27,7 @@ export const Actions = ({Reset}: Props) => {
         moviment.numMoviments = 0
         Reset()
         time.setRestart(true)
+        setStart('Restart')
         if (time.getFirstTime()) {
             setInterval(interval, 1000)
             time.setFirstTime(false)
@@ -44,12 +47,12 @@ export const Actions = ({Reset}: Props) => {
                     <p id="Moveh1">{moviment.numMoviments}</p>
                 </div>
             </div>
-            <div id="ButtonDiv" onClick={StartTime}>
-                <div id="BTN">
+            <div id="ButtonDiv" >
+                <div id="BTN" onClick={StartTime}>
                     <div id="BtnSymbol">
                         <img src="images/svgs/restart.svg" alt="" />
                     </div>
-                    <div id="BtnRestart">Restart</div>
+                    <div id="BtnRestart">{start}</div>
                 </div>
             </div>
         </s.ActionsDiv>
