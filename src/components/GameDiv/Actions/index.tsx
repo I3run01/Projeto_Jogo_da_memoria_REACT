@@ -1,7 +1,7 @@
 import * as s from "./style"
 import { time } from "./ActionsOBJ"
 import { moviment } from './ActionsOBJ'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 type Props = {
@@ -9,6 +9,18 @@ type Props = {
 }
 export const Actions = ({Reset}: Props) => {
     const [start, setStart] = useState('start')
+    let numbb = 0
+    const [numb, setNumb] = useState(0)
+    const [num, setNum] = useState(20)
+
+    useEffect(()=> {
+        setNum(num + 5)
+        numbb ++
+    },[numbb])
+    
+    const OneMore = () => {
+        setNumb(numb+1)
+    }
 
     let interval  = () => {
         if (time.getRestart() == true) {
@@ -39,6 +51,8 @@ export const Actions = ({Reset}: Props) => {
         <s.ActionsDiv>
             <div id="MenuDiv">
                 <div id="Time">
+                    <button onClick={OneMore} >OneMore</button>
+                    <h2>{num}</h2>
                     <h1>Time</h1>
                     <p id="TimesShow">00:00</p>
                 </div>
