@@ -1,6 +1,9 @@
 import { GameDivStyle } from "./styled"
 import { images } from "./Cards"
+import { Actions } from "./Actions"
 import * as F from "./Functions"
+
+
 
 export const GameDiv = () => {
 
@@ -32,12 +35,17 @@ export const GameDiv = () => {
     }
 
     return (
+        
         <GameDivStyle>
-            {images.map((item, index) => (
-                <div className="GameDiv" onClick={() => {Game(item)}} id={`GameDiv${item.Id}`}>
-                    <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+item.Id}/>
-                </div>
-            ))}
+            <Actions/>
+            <div id="GameLayout">
+                {images.map((item, index) => (
+                    <div className="GameDiv" onClick={() => {Game(item)}} id={`GameDiv${item.Id}`}>
+                        <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+item.Id}/>
+                    </div>
+                ))}
+            </div>
+            
         </GameDivStyle>
     ) 
 }
