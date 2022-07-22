@@ -9,7 +9,7 @@ type Props = {
 }
 export const Actions = ({Reset}: Props) => {
     const [start, setStart] = useState('start')
-    
+
     let interval  = () => {
         if (time.getRestart() == true) {
             time.setTime(Number(-1))
@@ -17,10 +17,10 @@ export const Actions = ({Reset}: Props) => {
         }
         time.setTime(time.getTime()+1)
         const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
-        const MovementsNum = document.querySelector('#Moveh1') as HTMLElement
+        //const MovementsNum = document.querySelector('#Moveh1') as HTMLElement
 
         paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
-        MovementsNum.innerHTML = String(`${moviment.numMoviments}`)
+        //MovementsNum.innerHTML = String(`${moviment.numMoviments}`)
     }
 
     const StartTime = () => {
@@ -44,7 +44,7 @@ export const Actions = ({Reset}: Props) => {
                 </div>
                 <div id="Movements">
                     <h1>Movements</h1>
-                    <p id="Moveh1">{moviment.numMoviments}</p>
+                    <p id="Moveh1">0</p>
                 </div>
             </div>
             <div id="ButtonDiv" >

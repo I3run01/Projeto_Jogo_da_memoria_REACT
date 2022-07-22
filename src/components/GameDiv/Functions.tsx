@@ -1,5 +1,6 @@
 import { images } from "./Cards"
 
+
 export const showCard = (img: string, id: number) => {
     let ImgGameDiv = document.querySelector(`#IMG${id}`) as HTMLImageElement
     let Gamediv = document.querySelector(`#GameDiv${id}`) as HTMLDivElement
