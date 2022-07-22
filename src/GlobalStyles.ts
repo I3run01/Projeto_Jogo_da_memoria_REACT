@@ -7,6 +7,8 @@ export const Main = styled.main`
     margin: auto;
 
     padding: 20px;
+    
+    
 
 `
 
