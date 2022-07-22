@@ -17,10 +17,10 @@ export const Actions = ({Reset}: Props) => {
         }
         time.setTime(time.getTime()+1)
         const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
-        //const MovementsNum = document.querySelector('#Moveh1') as HTMLElement
+        const MovementsNum = document.querySelector('#Moveh1') as HTMLElement
 
         paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
-        //MovementsNum.innerHTML = String(`${moviment.numMoviments}`)
+        MovementsNum.innerHTML = String(`${moviment.numMoviments}`)
     }
 
     const StartTime = () => {
