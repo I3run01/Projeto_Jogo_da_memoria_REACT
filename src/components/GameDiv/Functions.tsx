@@ -40,3 +40,15 @@ export const OutOfGame = (id: number) => {
     let index = images.findIndex(Obj => Obj.Id === id)
     images[index].CardInTheGame = false
 }
+
+export const Reset = () => {
+    images.map((item) => {
+        let image = document.querySelector(`#IMG${item.Id}`) as HTMLImageElement
+        let Div = document.querySelector(`#GameDiv${item.Id}`) as HTMLDivElement
+
+        image.src = 'images/svgs/b7.svg'
+        image.style.opacity = '20%'
+        Div.style.backgroundColor = '#a2acad'
+
+    })
+}

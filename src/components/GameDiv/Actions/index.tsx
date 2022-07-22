@@ -1,8 +1,12 @@
 import * as s from "./style"
-import { Timer } from "./ClassTimer"
+import { time } from "./ActionsOBJ"
+import { moviment } from './ActionsOBJ'
 
-export const Actions = () => {
-    let time = new Timer()
+
+type Props = {
+    Reset: () => void
+}
+export const Actions = ({Reset}: Props) => {
     
     let interval  = () => {
         if (time.getRestart() == true) {
@@ -11,16 +15,20 @@ export const Actions = () => {
         }
         time.setTime(time.getTime()+1)
         const paragraph = document.querySelector('#TimesShow') as HTMLParagraphElement
+        const MovementsNum = document.querySelector('#Moveh1') as HTMLElement
+
         paragraph.innerHTML = String(`${time.GetMinutes()}:${time.GetSeconds()}`)
+        MovementsNum.innerHTML = String(`${moviment.numMoviments}`)
     }
 
     const StartTime = () => {
+        moviment.numMoviments = 0
+        Reset()
         time.setRestart(true)
         if (time.getFirstTime()) {
             setInterval(interval, 1000)
             time.setFirstTime(false)
         }
-        
 
     }
 
@@ -33,7 +41,7 @@ export const Actions = () => {
                 </div>
                 <div id="Movements">
                     <h1>Movements</h1>
-                    <p>0</p>
+                    <p id="Moveh1">{moviment.numMoviments}</p>
                 </div>
             </div>
             <div id="ButtonDiv" onClick={StartTime}>

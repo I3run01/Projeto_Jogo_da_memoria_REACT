@@ -1,6 +1,4 @@
 import { Main } from './GlobalStyles'
-
-import { Actions } from './components/GameDiv/Actions'
 import { GameDiv } from './components/GameDiv'
 import { Nav } from './components/Nav'
 
