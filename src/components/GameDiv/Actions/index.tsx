@@ -9,19 +9,7 @@ type Props = {
 }
 export const Actions = ({Reset}: Props) => {
     const [start, setStart] = useState('start')
-    const [numb, setNumb] = useState(0)
-    const [num, setNum] = useState(20)
-
-    useEffect(()=> {
-        setNum(num + 1)
-    },[numb])
-    
-    const OneMore = () => {
-        
-        setInterval(() => {
-            setNumb(numb+1)
-        }, 1000);
-    }
+    const [countMovement, setCountMovement] = useState(0)
 
     let interval  = () => {
         if (time.getRestart() == true) {
@@ -52,9 +40,6 @@ export const Actions = ({Reset}: Props) => {
         <s.ActionsDiv>
             <div id="MenuDiv">
                 <div id="Time">
-                    <button onClick={OneMore} >OneMore</button>
-                    <h2>{num}</h2>
-                    <h3>{numb}</h3>
                     <h1>Time</h1>
                     <p id="TimesShow">00:00</p>
                 </div>

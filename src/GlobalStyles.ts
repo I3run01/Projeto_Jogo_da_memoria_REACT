@@ -8,5 +8,9 @@ export const Main = styled.main`
 
     padding: 20px;
 
+    @media screen {
+        
+    }
+
 `
 
