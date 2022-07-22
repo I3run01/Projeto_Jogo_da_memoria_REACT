@@ -9,17 +9,18 @@ type Props = {
 }
 export const Actions = ({Reset}: Props) => {
     const [start, setStart] = useState('start')
-    let numbb = 0
     const [numb, setNumb] = useState(0)
     const [num, setNum] = useState(20)
 
     useEffect(()=> {
-        setNum(num + 5)
-        numbb ++
-    },[numbb])
+        setNum(num + 1)
+    },[numb])
     
     const OneMore = () => {
-        setNumb(numb+1)
+        
+        setInterval(() => {
+            setNumb(numb+1)
+        }, 1000);
     }
 
     let interval  = () => {
@@ -53,6 +54,7 @@ export const Actions = ({Reset}: Props) => {
                 <div id="Time">
                     <button onClick={OneMore} >OneMore</button>
                     <h2>{num}</h2>
+                    <h3>{numb}</h3>
                     <h1>Time</h1>
                     <p id="TimesShow">00:00</p>
                 </div>
