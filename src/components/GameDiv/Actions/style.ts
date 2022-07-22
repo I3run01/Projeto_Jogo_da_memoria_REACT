@@ -70,6 +70,11 @@ export const ActionsDiv = styled.div`
         #MenuDiv {
             flex-direction: column;
             align-items: flex-start;
+
+            h1, p {
+                text-align: left;
+            }
+            
         }
 
     }

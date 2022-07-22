@@ -6,7 +6,7 @@ import { moviment } from "./Actions/ActionsOBJ"
 import { Nav } from "./Nav"
 import * as F from "./Functions"
 
-export const GameDiv = () => {
+export const GameDiv = () => {   
 
     type GameProps = {
         Img: string,
@@ -19,6 +19,7 @@ export const GameDiv = () => {
         if (time.getTime() > -1) {
             moviment.MoreOne()
             let FirstCard = F.AlreadyAOpenCard()
+            F.RandomList()
             F.showCard(item.Img, item.Id)
             item.OpenCard = true
             if (FirstCard.Img != 'null'){

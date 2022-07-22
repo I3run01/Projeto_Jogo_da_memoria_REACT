@@ -3,7 +3,6 @@ import { time } from "./ActionsOBJ"
 import { moviment } from './ActionsOBJ'
 import { useState, useEffect } from 'react'
 
-
 type Props = {
     Reset: () => void
 }

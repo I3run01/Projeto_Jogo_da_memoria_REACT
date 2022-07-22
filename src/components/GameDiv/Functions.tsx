@@ -1,3 +1,4 @@
+import { render } from "react-dom"
 import { images } from "./Cards"
 
 export const showCard = (img: string, id: number) => {
@@ -52,3 +53,13 @@ export const Reset = () => {
 
     })
 }
+
+export const RandomList = () => {
+    images.map((item) => {
+        let randomNum = Math.floor(Math.random() * 100);
+        item.Num = randomNum
+    })
+    images.sort((a,b) => (a.Num > b.Num) ? 1 : ((b.Num > a.Num) ? -1 : 0))
+
+}
+

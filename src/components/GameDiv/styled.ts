@@ -46,12 +46,13 @@ export const GameDivStyle = styled.div`
         }
 
         #GameLayout {
+            grid-template-columns: repeat(4, 1fr);
             grid-area: GameLayout;
             max-height: 40vh;
-            grid-gap: 20px;
+            grid-gap: 10px;
 
             .GameDiv {
-                max-height: 30px;
+                max-height: 70px;
             }
         }
 
