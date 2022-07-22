@@ -9,7 +9,7 @@ export const GameDivStyle = styled.div`
         grid-gap: 2vw;
 
         .GameDiv {
-            background-color: #a2acad;
+            background-color: #f6f6f6;
             padding: 2vw;
             height: 15vw;
             display: flex;
@@ -18,6 +18,7 @@ export const GameDivStyle = styled.div`
 
             :hover {
                 cursor: pointer;
+                transform: scale(0.9);
             }
 
             img {

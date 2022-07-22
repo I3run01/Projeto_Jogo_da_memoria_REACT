@@ -15,7 +15,7 @@ export const hideCard = (id: number) => {
     let Gamediv = document.querySelector(`#GameDiv${id}`) as HTMLDivElement
     ImgGameDiv.src = 'images/svgs/b7.svg'
     ImgGameDiv.style.opacity = '20%'
-    Gamediv.style.backgroundColor = '#a2acad'
+    Gamediv.style.backgroundColor = '#f6f6f6'
 
     let index = images.findIndex(Obj => Obj.Id === id)
     images[index].OpenCard = false
@@ -48,7 +48,7 @@ export const Reset = () => {
 
         image.src = 'images/svgs/b7.svg'
         image.style.opacity = '20%'
-        Div.style.backgroundColor = '#a2acad'
+        Div.style.backgroundColor = '#f6f6f6'
 
     })
 }

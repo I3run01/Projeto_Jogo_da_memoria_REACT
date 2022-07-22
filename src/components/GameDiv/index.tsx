@@ -7,7 +7,6 @@ import * as F from "./Functions"
 
 export const GameDiv = () => {
 
-
     type GameProps = {
         Img: string,
         Id: number,
@@ -47,7 +46,9 @@ export const GameDiv = () => {
                 Reset={F.Reset}/>
             <div id="GameLayout">
                 {images.map((item, index) => (
-                    <div className="GameDiv" onClick={() => {Game(item)}} id={`GameDiv${item.Id}`}>
+                    <div className="GameDiv" 
+                        id={`GameDiv${item.Id}`} 
+                        onClick={() => {Game(item)}}>
                         <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+item.Id}/>
                     </div>
                 ))}
