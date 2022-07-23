@@ -19,7 +19,6 @@ export const GameDiv = () => {
         if (time.getTime() > -1) {
             moviment.MoreOne()
             let FirstCard = F.AlreadyAOpenCard()
-            F.RandomList()
             F.showCard(item.Img, item.Id)
             item.OpenCard = true
             if (FirstCard.Img != 'null'){
