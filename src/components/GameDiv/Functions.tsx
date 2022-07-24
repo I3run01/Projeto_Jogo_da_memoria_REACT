@@ -45,10 +45,7 @@ export const Reset = () => {
     images.map((item) => {
         item.CardInTheGame = true
         item.OpenCard = true
-
         hideCard(item.Id)
-
-
     })
 }
 
