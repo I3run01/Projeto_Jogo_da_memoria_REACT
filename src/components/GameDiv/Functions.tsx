@@ -1,4 +1,3 @@
-import { render } from "react-dom"
 import { images } from "./Cards"
 
 export const showCard = (img: string, id: number) => {
