@@ -2,6 +2,8 @@ import * as s from "./style"
 import { time } from "./ActionsOBJ"
 import { moviment } from './ActionsOBJ'
 import { useState, useEffect } from 'react'
+import {numClosedsCardsOBJ} from './ActionsOBJ'
+import { images } from "../Cards"
 
 type Props = {
     Reset: () => void
@@ -23,7 +25,9 @@ export const Actions = ({Reset}: Props) => {
             time.setTime(Number(-1))
             time.setRestart(false)
         }
-        time.setTime(time.getTime()+1)
+
+        if (numClosedsCardsOBJ.numberClosedsCards === images.length) time.setTime(time.getTime())
+        else time.setTime(time.getTime()+1)    
         setTimeHookSeconds(time.GetSeconds())
         setTimeHookMinutes(time.GetMinutes())
     }

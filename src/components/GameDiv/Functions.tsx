@@ -1,3 +1,4 @@
+import { numClosedsCardsOBJ } from "./Actions/ActionsOBJ"
 import { images } from "./Cards"
 
 export const showCard = (img: string, id: number) => {
@@ -39,6 +40,8 @@ export const AlreadyAOpenCard = () => {
 export const OutOfGame = (id: number) => {
     let index = images.findIndex(Obj => Obj.Id === id)
     images[index].CardInTheGame = false
+    numClosedsCardsOBJ.numberClosedsCards += 1
+
 }
 
 export const Reset = () => {
