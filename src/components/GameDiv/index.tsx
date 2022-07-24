@@ -8,10 +8,26 @@ import * as F from "./Functions"
 import { useState } from "react"
 
 export const GameDiv = () => {
-    const [ording, setOrding] = useState([0, 1, 2, 3, 10, 5, 6, 7, 8, 9, 4, 11])
+    const [ording, setOrding] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+
+    const newOrding = () => {
+        let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        ranNums = [],
+        i = nums.length,
+        j = 0;
+
+        while (i--) {
+            j = Math.floor(Math.random() * (i+1));
+            ranNums.push(nums[j]);
+            nums.splice(j,1);
+        }
+
+        setOrding(ranNums)
+    }
     
     const Game = (index: number) => {
         if (time.getTime() > -1) {
+
             let obj = F.getImageObjct(index)
             moviment.MoreOne()
             let FirstCard = F.AlreadyAOpenCard()
@@ -37,7 +53,8 @@ export const GameDiv = () => {
             <div id="AsideCamp">
                 <Nav/>
                 <Actions
-                    Reset={F.Reset}/>
+                    Reset={F.Reset}
+                    NewOrding={newOrding}/>
             </div>
             
             <div id="GameLayout">

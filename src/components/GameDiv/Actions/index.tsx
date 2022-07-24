@@ -7,8 +7,9 @@ import { images } from "../Cards"
 
 type Props = {
     Reset: () => void
+    NewOrding: () => void
 }
-export const Actions = ({Reset}: Props) => {
+export const Actions = ({Reset, NewOrding}: Props) => {
     const [start, setStart] = useState('start')
     const [movementHook, setmovementHook] = useState(0)
     const [timeHookSeconds, setTimeHookSeconds] = useState(0)
@@ -35,6 +36,7 @@ export const Actions = ({Reset}: Props) => {
     const StartTime = () => {
         moviment.numMoviments = 0
         Reset()
+        NewOrding()
         time.setRestart(true)
         setStart('Restart')
         if (time.getFirstTime()) {
