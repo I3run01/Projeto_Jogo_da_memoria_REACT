@@ -17,6 +17,7 @@ export const Actions = ({Reset}: Props) => {
 
     })
     
+    
     let interval  = () => {
         if (time.getRestart() == true) {
             time.setTime(Number(-1))
