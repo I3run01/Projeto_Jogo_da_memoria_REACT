@@ -8,36 +8,26 @@ import * as F from "./Functions"
 
 export const GameDiv = () => {
     
-    type GameProps = {
-        Img: string,
-        Id: number,
-        OpenCard: boolean,
-        CardInTheGame: boolean
-    }
-    
-    const Game = (item: GameProps) => {
+    const Game = (index: number) => {
         if (time.getTime() > -1) {
+            let obj = F.getImageObjct(index)
             moviment.MoreOne()
             let FirstCard = F.AlreadyAOpenCard()
-            F.showCard(item.Img, item.Id)
-            item.OpenCard = true
+            F.showCard(obj.Img, obj.Id)
+            obj.OpenCard = true
             if (FirstCard.Img != 'null'){
 
-                if(item.Img != FirstCard.Img) {
+                if(obj.Img != FirstCard.Img) {
                     setTimeout(() => {F.hideCard(FirstCard.Id)}, 200);
-                    setTimeout(() => {F.hideCard(item.Id)}, 200);
+                    setTimeout(() => {F.hideCard(obj.Id)}, 200);
                     
                 }
                 else {
                     F.OutOfGame(FirstCard.Id)
-                    F.OutOfGame(item.Id)
+                    F.OutOfGame(obj.Id)
                 }
-
             }
-
-
         }
-        
     }
 
     return ( 
@@ -51,9 +41,9 @@ export const GameDiv = () => {
             <div id="GameLayout">
                 {images.map((item, index) => (
                     <div className="GameDiv" 
-                        id={`GameDiv${item.Id}`} 
-                        onClick={() => {Game(item)}}>
-                        <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+item.Id}/>
+                        id={`GameDiv${index}`} 
+                        onClick={() => {Game(index)}}>
+                        <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+index}/>
                     </div>
                 ))}
             </div>

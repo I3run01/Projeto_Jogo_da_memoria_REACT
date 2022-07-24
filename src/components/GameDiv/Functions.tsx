@@ -53,4 +53,9 @@ export const Reset = () => {
     })
 }
 
+export const getImageObjct = (id: number) => {
+    let index = images.findIndex(Obj => Obj.Id == id)
+    return images[index]
+}
+
 
