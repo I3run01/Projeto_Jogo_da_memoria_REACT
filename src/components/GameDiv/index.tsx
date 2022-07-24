@@ -5,8 +5,10 @@ import { time } from "./Actions/ActionsOBJ"
 import { moviment } from "./Actions/ActionsOBJ"
 import { Nav } from "./Nav"
 import * as F from "./Functions"
+import { useState } from "react"
 
 export const GameDiv = () => {
+    const [ording, setOrding] = useState([0, 1, 2, 3, 10, 5, 6, 7, 8, 9, 4, 11])
     
     const Game = (index: number) => {
         if (time.getTime() > -1) {
@@ -41,9 +43,9 @@ export const GameDiv = () => {
             <div id="GameLayout">
                 {images.map((item, index) => (
                     <div className="GameDiv" 
-                        id={`GameDiv${index}`} 
-                        onClick={() => {Game(index)}}>
-                        <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+index}/>
+                        id={`GameDiv${ording[index]}`} 
+                        onClick={() => {Game(ording[index])}}>
+                        <img key={index} src='images/svgs/b7.svg' alt="" id={'IMG'+ording[index]}/>
                     </div>
                 ))}
             </div>
