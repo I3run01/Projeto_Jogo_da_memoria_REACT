@@ -49,6 +49,7 @@ export const Reset = () => {
         item.CardInTheGame = true
         item.OpenCard = false
         hideCard(item.Id)
+        numClosedsCardsOBJ.numberClosedsCards = 0
     })
 }
 
