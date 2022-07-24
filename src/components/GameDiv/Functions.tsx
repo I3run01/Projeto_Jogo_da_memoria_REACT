@@ -43,12 +43,11 @@ export const OutOfGame = (id: number) => {
 
 export const Reset = () => {
     images.map((item) => {
-        let image = document.querySelector(`#IMG${item.Id}`) as HTMLImageElement
-        let Div = document.querySelector(`#GameDiv${item.Id}`) as HTMLDivElement
+        item.CardInTheGame = true
+        item.OpenCard = true
 
-        image.src = 'images/svgs/b7.svg'
-        image.style.opacity = '20%'
-        Div.style.backgroundColor = '#f6f6f6'
+        hideCard(item.Id)
+
 
     })
 }
